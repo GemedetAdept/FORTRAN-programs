@@ -1,0 +1,5 @@
+MODULE tests_mod
+IMPLICIT NONE
+private
+
+END MODULE
