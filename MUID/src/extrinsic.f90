@@ -117,7 +117,7 @@ CONTAINS
 		IMPLICIT NONE
 		character*32:: MUID_IN
 		character*36:: MUID_OUT
-! 1:8, 9, 10:13, 14, 15:18, 19, 20:23, 24, 25:32
+		
 		MUID_OUT(1:8) = MUID_IN(1:8)
 		MUID_OUT(9:9) = "-"
 		MUID_OUT(10:13) = MUID_IN(9:12)
