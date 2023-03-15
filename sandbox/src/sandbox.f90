@@ -5,11 +5,13 @@ integer, parameter:: dp = selected_real_kind(31)
 character*1:: esc = achar(27)
 character*6:: ansi_purple = ""//achar(27)//"[35m "
 character*4:: ansi_clear = ""//achar(27)//"[0m"
+character*20:: jude = "mabel the skullbiter"
 
 real:: har(10)
 real:: pseudo_rand, modulus, multi, incr, seed
 integer:: date_time(8)
 character*10:: b(3)
+integer:: i
 
 real:: matrix(3,3) = 0.0
 matrix(1, 1:3) = 1.0 ! top row
@@ -48,5 +50,11 @@ seed = date_time(8)
 
 pseudo_rand = MOD(((multi*seed) + incr), modulus)
 print*, pseudo_rand
+
+print*, ACHAR(10), ACHAR(10)
+
+DO i=1, 20, 1
+	print '(B0.8)', jude(i:i)
+END DO
 
 End Program sandbox
