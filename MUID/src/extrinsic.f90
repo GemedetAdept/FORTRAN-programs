@@ -7,6 +7,8 @@ public get_time_string
 public get_seed_integer
 public int_to_hex16
 public string_to_hex
+public concat_string_array
+public insert_MUID_dashes
 
 CONTAINS
 	FUNCTION reverse(string_IN) result(reverse_OUT)
@@ -101,6 +103,30 @@ CONTAINS
 
 	FUNCTION concat_string_array(array_IN) result(string_OUT)
 		IMPLICIT NONE
+		character*4, dimension(5):: array_IN
+		character*20:: string_OUT
+
+		string_OUT(1:4) = array_IN(1)
+		string_OUT(5:8) = array_IN(2)
+		string_OUT(9:12) = array_IN(3)
+		string_OUT(13:16) = array_IN(4)
+		string_OUT(17:20) = array_IN(5)
+	END FUNCTION
+
+	FUNCTION insert_MUID_dashes(MUID_IN) result(MUID_OUT)
+		IMPLICIT NONE
+		character*32:: MUID_IN
+		character*36:: MUID_OUT
+! 1:8, 9, 10:13, 14, 15:18, 19, 20:23, 24, 25:32
+		MUID_OUT(1:8) = MUID_IN(1:8)
+		MUID_OUT(9:9) = "-"
+		MUID_OUT(10:13) = MUID_IN(9:12)
+		MUID_OUT(14:14) = "-"
+		MUID_OUT(15:18) = MUID_IN(13:16)
+		MUID_OUT(19:19) = "-"
+		MUID_OUT(20:23) = MUID_IN(17:20)
+		MUID_OUT(24:24) = "-"
+		MUID_OUT(25:36) = MUID_IN(21:32)
 	END FUNCTION
 
 END MODULE extrinsic

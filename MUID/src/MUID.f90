@@ -18,9 +18,11 @@ character*12:: location_hex
 integer:: seed_integer, rand_integer
 character*4:: rand_hex_16
 character*4, dimension(5):: MUID_array
+character*20:: MUID_arr_concat
 integer:: i
 
 character*32:: MUID_output
+character*36:: MUID_dash_OUT
 
 CALL DATE_AND_TIME(dt_inputs(1), dt_inputs(2), dt_inputs(3), date_time)
 
@@ -34,20 +36,29 @@ time_array = (/hour_string, min_string, sec_string, ms_string/)
 seed_string = get_time_string(time_array)
 
 seed_integer = get_seed_integer(seed_string)
-PRINT*, "seed_integer: ", seed_integer
 
 location_code = "SCI153"
 location_hex = string_to_hex(location_code)
-PRINT*, location_code
-PRINT*, location_hex
 
-DO i=1, SIZE(MUID_array)-1, 1
+DO i=1, SIZE(MUID_array), 1
 	rand_integer = vms_rand(seed_integer)
 	rand_hex_16 = int_to_hex16(rand_integer)
 	MUID_array(i) = rand_hex_16
 	seed_integer = rand_integer
 END DO
 
-MUID_output = MUID_array(1:5)//location_hex
+MUID_arr_concat = concat_string_array(MUID_array)
+MUID_output = MUID_arr_concat//location_hex
+MUID_dash_OUT = insert_MUID_dashes(MUID_output)
+
+! Print the generated MUID strings
+! XXXXXXXX-XXXX-XXXX-XXXX-BBBBBBRRRRRR
+! X: Generated hexadecimal character
+! B: Building/Location code
+! R: Room number
+
+PRINT*, "Location Code: ", location_code, " / ", location_hex
+PRINT*, "MUID, no dash: ", MUID_output
+PRINT*, "MUID, dashed : ", MUID_dash_OUT
 
 END PROGRAM MUID
