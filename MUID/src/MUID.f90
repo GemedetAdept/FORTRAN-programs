@@ -37,7 +37,7 @@ seed_string = get_time_string(time_array)
 
 seed_integer = get_seed_integer(seed_string)
 
-location_code = "SCI153"
+location_code = "SCI153" ! Exactly 6 characters
 location_hex = string_to_hex(location_code)
 
 DO i=1, SIZE(MUID_array), 1

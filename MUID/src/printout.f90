@@ -1,0 +1,12 @@
+MODULE printout
+IMPLICIT NONE
+private
+public ToCSV
+
+CONTAINS
+	FUNCTION ToCSV(data_array_IN)
+		IMPLICIT NONE
+		
+	END FUNCTION ToCSV
+
+END MODULE printout
