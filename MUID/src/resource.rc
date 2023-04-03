@@ -1,0 +1,3 @@
+#include <winresrc.h>
+#define IDR_MAINFRAME                   128
+IDR_MAINFRAME           ICON                    "./.icos/compiled_c.ico"

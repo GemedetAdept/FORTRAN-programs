@@ -5,6 +5,8 @@ package = MUID
 srcs = $(patsubst %.f90, %.o, $(wildcard *.f90)) \
 	$(patsubst %.mod)
 objects = extrinsic.o pseudorand.o
+driver = MUID.f90
+output = MUID.exe
 run = ./MUID
 
 export SHELL=C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe

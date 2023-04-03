@@ -1,6 +1,6 @@
 PROGRAM sandbox
 IMPLICIT NONE
 
-WRITE(*,*) "FORTRAN: Hello World!"
+logical:: 
 
 END PROGRAM sandbox
