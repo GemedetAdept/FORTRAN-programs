@@ -3,7 +3,6 @@ driver = sandbox.f90
 output = sandbox.exe
 run = ./sandbox
 
-.SILENT: compile
-
-compile:
+.SILENT: execute
+execute:
 	$(FC) $(driver) -o $(output) && $(run)

@@ -2,7 +2,8 @@ FC = gfortran
 driver = MUID.f90
 output = MUID.exe
 objects = extrinsic.f90 pseudorand.f90
+run = ./MUID
 
 .SILENT: execute
 execute:
-	$(FC) $(objects) $(driver) -o $(output)
+	$(FC) $(objects) $(driver) -o $(output) && $(run)

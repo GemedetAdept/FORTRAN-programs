@@ -1,13 +1,4 @@
-MAKEFLAGS += --no-builtin-rules --no-builtin-variables
-
-FC = gfortran
-package = MUID
-srcs = $(patsubst %.f90, %.o, $(wildcard *.f90)) \
-	$(patsubst %.mod)
-objects = extrinsic.o pseudorand.o
 run = ./MUID
-
-export SHELL=C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe
 
 .SILENT: execute
 execute:

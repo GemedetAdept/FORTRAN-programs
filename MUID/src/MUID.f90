@@ -61,7 +61,4 @@ PRINT*, "Location Code: ", location_code, " / ", location_hex
 PRINT*, "MUID, no dash: ", MUID_output
 PRINT*, "MUID, dashed : ", MUID_dash_OUT
 
-PRINT*, ""
-PRINT*, "Translate this base64: aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g/dj1mQzdvVU9VRUVpNA=="
-
 END PROGRAM MUID
