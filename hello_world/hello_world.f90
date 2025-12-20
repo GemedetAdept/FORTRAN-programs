@@ -1,8 +1,5 @@
-PROGRAM helloworld
-IMPLICIT NONE
-
-character*13:: message
-message = "Hello, world!"
-PRINT*, message
-
-END PROGRAM helloworld
+PROGRAM hello_world
+    IMPLICIT NONE
+    ! extremely basic program to print "hello, world!"
+    PRINT *, "Hello, world!"
+END PROGRAM hello_world

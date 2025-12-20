@@ -1,0 +1,5 @@
+build := gfortran
+filename := hello_world
+main:
+	$(build) $(filename).f08 -o $(filename)
+	./$(filename)
