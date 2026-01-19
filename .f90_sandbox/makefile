@@ -1,8 +1,7 @@
 build := gfortran
-filename := [filename]
+filename := f90_sandbox
 
-src := $(filename).f90\
-			[mod_module].f90
+src := $(filename).f90
 
 debug_flags := -Og\
 			-Wall\
